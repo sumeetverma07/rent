@@ -1,0 +1,17 @@
+RentSpace has been deployed.
+
+Release: {{ .Release.Name }}
+Namespace: {{ .Release.Namespace }}
+
+{{- if .Values.ingress.enabled }}
+Ingress:
+{{- range .Values.ingress.hosts }}
+  http://{{ .host }}
+{{- end }}
+{{- else }}
+Run this command to port-forward locally:
+  kubectl port-forward svc/{{ include "rentspace.fullname" . }} 3000:{{ .Values.service.port }} -n {{ .Release.Namespace }}
+
+Then open:
+  http://localhost:3000
+{{- end }}
