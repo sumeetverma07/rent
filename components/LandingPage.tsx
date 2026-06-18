@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Check, Download, Smartphone, Star } from "lucide-react";
 import { AdvancedFilters, SearchPanel } from "@/components/SearchPanel";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
@@ -14,16 +15,20 @@ function HeroVisual() {
       <div className="absolute inset-x-8 top-8 h-72 rounded-full bg-gradient-to-r from-blue-200/50 to-emerald-200/60 blur-3xl dark:from-blue-500/20 dark:to-emerald-500/20" />
       <div className="mesh-card relative overflow-hidden rounded-lg border border-white/80 p-4 shadow-glow dark:border-slate-800">
         <div className="grid gap-3 sm:grid-cols-[1.2fr_0.8fr]">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
             alt="Premium rental apartment living room"
             className="h-72 w-full rounded-lg object-cover sm:h-[420px]"
+            width={1200}
+            height={420}
           />
           <div className="grid gap-3">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80"
               alt="Modern office space for rent"
               className="h-36 w-full rounded-lg object-cover sm:h-[202px]"
+              width={900}
+              height={202}
             />
             <div className="relative h-36 overflow-hidden rounded-lg bg-gradient-to-br from-ocean to-mint p-4 text-white sm:h-[202px]">
               <div className="absolute right-3 top-3 rounded-full bg-white/20 px-3 py-1 text-xs font-extrabold backdrop-blur">Live demand</div>
@@ -200,9 +205,9 @@ export function LandingPage() {
                   <div className="flex gap-1 text-amber-400">
                     {Array.from({ length: 5 }).map((_, index) => <Star key={index} className="h-4 w-4 fill-current" />)}
                   </div>
-                  <p className="mt-5 text-sm leading-6 text-slate-600 dark:text-slate-300">"{review.text}"</p>
+                  <p className="mt-5 text-sm leading-6 text-slate-600 dark:text-slate-300">&quot;{review.text}&quot;</p>
                   <div className="mt-6 flex items-center gap-3">
-                    <img src={review.avatar} alt={review.name} className="h-12 w-12 rounded-full object-cover" />
+                    <Image src={review.avatar} alt={review.name} className="h-12 w-12 rounded-full object-cover" width={48} height={48} />
                     <div>
                       <p className="font-black text-ink dark:text-white">{review.name}</p>
                       <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">{review.role}</p>
@@ -233,7 +238,7 @@ export function LandingPage() {
                   <Smartphone className="h-5 w-5 text-ocean" />
                   <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-black text-emerald-700">Live</span>
                 </div>
-                <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=800&q=80" alt="Rental apartment app preview" className="mt-4 h-56 w-full rounded-lg object-cover" />
+                <Image src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=800&q=80" alt="Rental apartment app preview" className="mt-4 h-56 w-full rounded-lg object-cover" width={800} height={224} />
                 <div className="mt-4 grid gap-2">
                   <div className="h-3 w-3/4 rounded-full bg-slate-200 dark:bg-slate-700" />
                   <div className="h-3 w-1/2 rounded-full bg-slate-200 dark:bg-slate-700" />

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Bath, BedDouble, CalendarDays, Car, Heart, MapPin, MessageCircle, Share2, ShieldCheck, Star, Wifi } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Footer } from "@/components/Footer";
@@ -55,10 +56,10 @@ export default function PropertyDetailsPage({ params }: PageProps) {
           </div>
 
           <div className="mt-8 grid gap-3 lg:grid-cols-[1.25fr_0.75fr]">
-            <img src={property.images[0]} alt={`${property.title} main gallery`} className="h-[360px] w-full rounded-lg object-cover shadow-soft lg:h-[520px]" />
+            <Image src={property.images[0]} alt={`${property.title} main gallery`} className="h-[360px] w-full rounded-lg object-cover shadow-soft lg:h-[520px]" width={800} height={520} />
             <div className="grid grid-cols-2 gap-3">
               {property.images.slice(1).map((image) => (
-                <img key={image} src={image} alt={`${property.title} gallery view`} className="h-[174px] w-full rounded-lg object-cover shadow-sm lg:h-[253px]" />
+                <Image key={image} src={image} alt={`${property.title} gallery view`} className="h-[174px] w-full rounded-lg object-cover shadow-sm lg:h-[253px]" width={400} height={253} />
               ))}
               <div className="grid h-[174px] place-items-center rounded-lg border border-slate-200 bg-slate-50 text-sm font-black text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300 lg:h-[253px]">+12 Photos</div>
             </div>
@@ -113,7 +114,7 @@ export default function PropertyDetailsPage({ params }: PageProps) {
             </p>
             <div className="mt-6 rounded-lg bg-slate-50 p-4 dark:bg-slate-900">
               <div className="flex items-center gap-3">
-                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=180&q=80" alt="Owner profile" className="h-14 w-14 rounded-full object-cover" />
+                <Image src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=180&q=80" alt="Owner profile" className="h-14 w-14 rounded-full object-cover" width={56} height={56} />
                 <div>
                   <p className="font-black">Rohan Estates</p>
                   <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">Verified owner</p>

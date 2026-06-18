@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Building2, Chrome, KeyRound, Mail, ShieldCheck, User } from "lucide-react";
 
 type AuthPageProps = {
@@ -22,7 +23,7 @@ export function AuthPage({ mode }: AuthPageProps) {
           <h1 className="mt-16 max-w-xl text-5xl font-black">Premium rentals, verified owners, faster decisions.</h1>
           <p className="mt-5 max-w-lg text-lg leading-8 text-slate-300">A polished authentication flow with Google sign-in, email verification, and password recovery patterns.</p>
         </div>
-        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=80" alt="Modern rental home exterior" className="h-72 rounded-lg object-cover shadow-glow" />
+        <Image src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=80" alt="Modern rental home exterior" className="h-72 rounded-lg object-cover shadow-glow" width={1000} height={288} />
       </section>
 
       <section className="flex items-center justify-center px-4 py-10">

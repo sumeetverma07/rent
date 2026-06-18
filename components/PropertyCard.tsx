@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Heart, MapPin, Star } from "lucide-react";
 import type { Property } from "@/lib/data";
 
@@ -12,10 +13,12 @@ export function PropertyCard({ property }: PropertyCardProps) {
   return (
     <article className="group overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-soft dark:border-slate-800 dark:bg-slate-950">
       <div className="relative aspect-[4/3] overflow-hidden">
-        <img
+        <Image
           src={property.images[0]}
           alt={`${property.title} interior`}
           className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <div className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-xs font-extrabold text-ocean shadow-sm backdrop-blur dark:bg-slate-950/80 dark:text-mint">
           {property.type}

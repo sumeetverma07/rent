@@ -1,0 +1,10 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/auth/forgot-password/page": "app/auth/forgot-password/page.js",
+  "/dashboard/owner/page": "app/dashboard/owner/page.js",
+  "/dashboard/renter/page": "app/dashboard/renter/page.js",
+  "/auth/login/page": "app/auth/login/page.js",
+  "/auth/register/page": "app/auth/register/page.js",
+  "/page": "app/page.js",
+  "/properties/[id]/page": "app/properties/[id]/page.js"
+}
